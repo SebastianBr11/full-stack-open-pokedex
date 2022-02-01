@@ -34,3 +34,4 @@ jobs:
           heroku_email: 'flockean11@gmail.com'
           healthcheck: 'https://cicd-full-stack-open.herokuapp.com/health'
           checkstring: 'ok'
+          rollbackonhealthcheckfailed: true
