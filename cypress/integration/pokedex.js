@@ -6,4 +6,11 @@ describe('Pokedex', function () {
       'Pokémon and Pokémon character names are trademarks of Nintendo.'
     )
   })
+
+  it('can navigate from front page to individual pokemon page', function () {
+    cy.get('a[href="/pokemon/ivysaur"]').click()
+
+    cy.location('pathname').should('include', '/pokemon/ivysaur')
+    cy.contains('chlorophyll')
+  })
 })
