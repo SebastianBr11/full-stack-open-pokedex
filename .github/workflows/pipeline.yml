@@ -32,3 +32,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: 'cicd-full-stack-open'
           heroku_email: 'flockean11@gmail.com'
+          healthcheck: 'https://cicd-full-stack-open.herokuapp.com/health'
+          checkstring: 'ok'
