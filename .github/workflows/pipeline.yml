@@ -49,7 +49,7 @@ jobs:
           DEFAULT_BUMP: patch
       - if: failure() && github.event_name == 'push'
         name: Notify discord that build failed
-
+        run: echo "hi"
       - if: success() && github.event_name == 'push'
         name: Notify discord that new version was deployed
         uses: rjstone/discord-webhook-notify@v1.0.4
