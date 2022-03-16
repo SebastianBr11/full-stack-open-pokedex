@@ -51,6 +51,7 @@ jobs:
         name: Notify discord that build failed
         uses: rjstone/discord-webhook-notify@v1.0.4
         with:
+          avatarUrl: https://avatars.githubusercontent.com/u/41546861?v=4
           text: "Build failed"
           description: "commit ${{ github.event.head_commit.url }} by ${{ github.event.head_commit.author.username }} broke the build :("
           severity: error
