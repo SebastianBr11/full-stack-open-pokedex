@@ -54,6 +54,9 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
       - if: success() && github.event_name == 'push'
         name: Notify discord that new version was deployed
-        env: 
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
+        uses: rjstone/discord-webhook-notify@v1.0.4
+        with:
+          text: "A new version of Pokedex deployed"
+          description: "to https://cicd-full-stack-open.herokuapp.com by ${{ github.event.pusher.name }}"
+          severity: error
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
